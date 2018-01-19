@@ -1,0 +1,38 @@
+tap "homebrew/versions"
+tap "thoughtbot/formulae"
+
+brew "openssl" # LEAVE THIS AT THE TOP!
+brew "coreutils"
+brew "findutils"
+brew "moreutils"
+
+# TODO: Add this as a command to add to bashrc or zshrc if it's not there
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+brew "bash" # Install bash 4
+brew "bash-completion2"
+brew "chromedriver", restart_service: true
+brew "dark-mode"
+brew "exercism"
+brew "git"
+brew "git-lfs"
+brew "gnu-sed", args: ["with-default-names"]
+brew "heroku"
+brew "imagemagick"
+brew "libyaml" # should come after openssl
+brew "pandoc"
+brew "rcm"
+brew "reattach-to-user-namespace" # Fixes tmux macOS issues
+brew "the_silver_searcher"
+brew "tmux"
+brew "tree"
+brew "universal-ctags", args: ["HEAD"]
+brew "watchman"
+brew "webkit2png"
+brew "wget", args: ["with-iri"]
+brew "zsh"
+
+# Containers and VMs
+brew "virtualbox"
+brew "vagrant"
+brew "docker"
+brew "openshift-cli"
