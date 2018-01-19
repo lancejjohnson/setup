@@ -1,4 +1,0 @@
-brew "chruby"
-brew "ruby-install"
-brew "qt@5.5", link: true
-
