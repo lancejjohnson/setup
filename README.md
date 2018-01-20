@@ -11,6 +11,7 @@ Download the init file and run the init file:
 ```shell
 cd
 curl -O https://raw.githubusercontent.com/lancejjohnson/setup/master/init.sh
+chmod u+x ./init.sh
 ./init.sh
 ```
 
