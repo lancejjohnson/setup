@@ -25,7 +25,9 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Save screenshots to the Pictures/Screenshots
-mkdir ${HOME}/Pictures/Screenshots 2> /dev/null
+if [ ! -d ${HOME}/Pictures/Screenshots ]; then
+  mkdir ${HOME}/Pictures/Screenshots
+fi
 defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
