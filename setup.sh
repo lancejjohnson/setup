@@ -1,15 +1,30 @@
 #!/usr/bin/env bash
-source ./shared.sh
+source ./functions.sh
+
+# Initialize
+source ./init.sh
+
+# Acquire dotfiles and put in place
+source ./dotfiles.sh # TODO
 
 # Prep the OS
-. ./osxprep.sh
+source ./prepareos.sh
 
 # Customize the OS
-. ./macos.sh
+source ./configos.sh
 
 # Install the package manager
-. ./homebrew.sh
+source ./homebrew.sh
 
 # Install packages
-brew bundle Brewfile
-brew bundle Caskfile
+# brew bundle --file=Brewfile
+# brew bundle --file=Caskfile
+# brew bundle --file=Fontfile
+
+# Configure languages
+declare -a languages=("ruby" "golang" "python" "elixir" "javascript")
+
+for lang in "${languages[@]}"; do
+  echo "${lang}.sh"
+  # source "${lang}.sh"
+done

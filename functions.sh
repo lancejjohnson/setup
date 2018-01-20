@@ -24,5 +24,5 @@ function ensure_homebrew {
   echo "Homebrew installed ..."
 
   echo "Updating homebrew ..."
-  brew update
+  brew update > /dev/null
 }
