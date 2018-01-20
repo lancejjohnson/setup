@@ -10,8 +10,10 @@ if test ! $(which git); then
   exit 1
 else
   echo "Installing setup scripts ..."
+  if [ ! -d $HOME/.setup ]; then
+    mkdir $HOME/.setup
+  fi
   curl -L https://api.github.com/repos/lancejjohnson/setup/tarball | tar xz --strip=1 -C $HOME/.setup
-  # git clone https://github.com/lancejjohnson/setup.git $HOME/.setup
   cd $HOME/.setup
   source ./setup.sh
 fi
