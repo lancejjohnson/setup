@@ -12,9 +12,9 @@ source ./prepareos.sh
 
 source ./configos.sh
 
-source ./homebrew.sh
-
 source ./dotfiles.sh
+
+source ./homebrew.sh
 
 source ./system.sh
 

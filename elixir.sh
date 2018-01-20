@@ -16,10 +16,10 @@ if test ! $(which git); then
 fi
 
 echo "Installing exenv ..."
-git clone git://github.com/mururu/exenv.git ~/.exenv
+git clone git://github.com/mururu/exenv.git $HOME/.exenv
 
 echo "Installing elixir-build ..."
-git clone git://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build
+git clone git://github.com/mururu/elixir-build.git $HOME/.exenv/plugins/elixir-build
 
 exec $SHELL
 

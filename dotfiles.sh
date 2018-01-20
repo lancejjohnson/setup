@@ -2,6 +2,11 @@
 
 set -e
 
+# Ask for the administrator password upfront.
+sudo -v
+
+source ./shared.sh
+
 if test ! $(which git); then
   echo "git is not installed; cannot clone dotfiles"
   exit 1
@@ -11,11 +16,12 @@ fi
 
 # Clone dotfiles
 echo "Cloning git repositories for initialization ..."
-git clone https://github.com/lancejjohnson/dotfiles.git ~/.dotfiles
+git clone https://github.com/lancejjohnson/dotfiles.git $HOME/.dotfiles
 
 # Check for rcm
 if test ! $(which rcup); then
   echo "rcm is not installed ..."
+  ensure_homebrew
   brew tap thoughtbot/formulae
   brew install rcm
   brew cleanup
