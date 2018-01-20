@@ -11,5 +11,10 @@ echo "Updating macOS.  If this requires a restart, run the script again."
 sudo softwareupdate --install --recommended
 
 echo "------------------------------"
-echo "Installing Xcode Command Line Tools."
-xcode-select --install
+if xcode-select --install 2>&1 | grep installed; then
+  echo "Xcode Command Line Tools installed ..."
+else
+  echo "Installing Xcode Command Line Tools."
+  xcode-select --install
+fi
+
