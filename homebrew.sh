@@ -21,3 +21,10 @@ for f in "${brewfiles[@]}"; do
     echo "${brewfile} does not exist"
   fi
 done
+
+if test $(which heroku); then
+  brew unlink heroku
+  brew link --force heroku
+fi
+
+brew cleanup

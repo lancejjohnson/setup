@@ -27,5 +27,6 @@ if test ! $(which exenv); then
   echo "Problem installing exenv, exiting!"
   exit 1
 fi
+echo "Installing Elixir ..."
 exenv install 1.6.0
 exenv global 1.6.0

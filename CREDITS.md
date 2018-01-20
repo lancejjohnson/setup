@@ -58,4 +58,3 @@ This repo builds on the awesome work from the following repos:
 * [Android SDK](http://geckobrosradio.com/wp-content/uploads/2014/06/android-logo-png.png)
 * [Android Studio](http://www.eightbitdreams.com/wp-content/uploads/2015/05/android-studio-logo.png)
 * [IntelliJ IDEA](http://www.jetbrains.com/img/logos/intellijIdea.png)
-

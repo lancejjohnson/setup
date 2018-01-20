@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
 
+set -e
 
-if test $(which git); then
-  mkdir ~/.dotfiles ~/.setup
-
-  echo "Cloning git repositories for initialization"
-  git clone git@github.com:lancejjohnson/dotfiles.git ~/.dotfiles
-  git clone git@github.com:lancejjohnson/setup.git ~/.setup
+if test ! $(which git); then
+  echo "git is not installed; cannot clone repositories; exiting!"
+  exit 1
 else
-  echo "git is not installed"
-  echo "initializing from tarballs"
-  # mkdir ~/tmp
-  # cd ~/tmp
-  # curl -L https://api.github.com/repos/lancejjohnson/setup/tarball > ./setup.tar.gz
-  # curl -L https://api.github.com/repos/lancejjohnson/dotfiles/tarball > ./dotfiles.tar.gz
-
-  # | tar -xzv --strip-components 1 --exclude={README.md,LICENSE}
+  echo "Cloning git repositories for initialization ..."
+  # git clone git@github.com:lancejjohnson/dotfiles.git ~/.dotfiles
+  git clone https://github.com/lancejjohnson/setup.git ~/.setup
+  cd $HOME/.setup
+  source ./setup.sh
 fi
 

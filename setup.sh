@@ -1,30 +1,26 @@
 #!/usr/bin/env bash
-source ./functions.sh
 
-# Initialize
-source ./init.sh
+set -e
 
-# Acquire dotfiles and put in place
-source ./dotfiles.sh # TODO
+# Ask for the administrator password upfront.
+sudo -v
 
-# Prep the OS
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 source ./prepareos.sh
 
-# Customize the OS
 source ./configos.sh
 
-# Install the package manager
 source ./homebrew.sh
 
-# Install packages
-# brew bundle --file=Brewfile
-# brew bundle --file=Caskfile
-# brew bundle --file=Fontfile
+source ./dotfiles.sh
 
-# Configure languages
-declare -a languages=("ruby" "golang" "python" "elixir" "javascript")
+source ./system.sh
+
+declare -a languages=("ruby" "elixir" "javascript")
 
 for lang in "${languages[@]}"; do
-  echo "${lang}.sh"
-  # source "${lang}.sh"
+  echo "Preparing ${lang}.sh ..."
+  source "${lang}.sh"
 done

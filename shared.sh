@@ -8,6 +8,15 @@ function fancy_echo {
   printf "\n$fmt\n" "$@"
 }
 
+# thoughtbot
+function gem_install_or_update() {
+  if gem list "$1" --installed > /dev/null; then
+    gem update "$@"
+  else
+    gem install "$@"
+  fi
+}
+
 function ensure_homebrew {
   echo "Checking for homebrew ..."
 
