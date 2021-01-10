@@ -14,9 +14,9 @@ if test ! $(which git); then
   exit 1
 fi
 
-# Clone dotfiles
-fancy_echo "Cloning git repositories for initialization ..."
-if [! -d $HOME/.dotfiles/.git ]; then
+if [! -d $HOME/.dotfiles/.git ]
+then
+  fancy_echo "Cloning git repositories for initialization ..."
   git clone https://github.com/lancejjohnson/dotfiles.git $HOME/.dotfiles
 fi
 
