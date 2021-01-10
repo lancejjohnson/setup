@@ -14,8 +14,10 @@ if test ! $(which git); then
   exit 1
 fi
 
-if [! -d $HOME/.dotfiles/.git ]
+if [ -d "$HOME/.dotfiles" ]
 then
+  fancy_echo "dotfiles already cloned"
+else
   fancy_echo "Cloning git repositories for initialization ..."
   git clone https://github.com/lancejjohnson/dotfiles.git $HOME/.dotfiles
 fi
