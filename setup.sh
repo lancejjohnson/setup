@@ -9,18 +9,9 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 source ./osprep.sh
-
 source ./osconfig.sh
-
 source ./dotfiles.sh
-
 source ./homebrew.sh
+source ./asdf.sh
+source ./shell.sh
 
-source ./system.sh
-
-declare -a languages=("ruby" "elixir" "javascript")
-
-for lang in "${languages[@]}"; do
-  echo "Preparing ${lang}.sh ..."
-  source "${lang}.sh"
-done
