@@ -24,5 +24,4 @@ if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
 fi
 sudo chsh -s "$shell_path" "$USER"
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 source $HOME/.zshrc
