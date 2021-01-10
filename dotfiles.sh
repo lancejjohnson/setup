@@ -16,7 +16,9 @@ fi
 
 # Clone dotfiles
 fancy_echo "Cloning git repositories for initialization ..."
-git clone https://github.com/lancejjohnson/dotfiles.git $HOME/.dotfiles
+if [! -d $HOME/.dotfiles/.git ]; then
+  git clone https://github.com/lancejjohnson/dotfiles.git $HOME/.dotfiles
+fi
 
 # Check for rcm
 if test ! $(which rcup); then
