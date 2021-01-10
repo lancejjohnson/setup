@@ -35,7 +35,7 @@ function ensure_homebrew {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 
-  if brew list | grep -Fq brew-cask; then
+  if brew list --formula | grep -Fq brew-cask; then
     echo "Uninstalling old Homebrew-Cask ..."
     brew uninstall --force brew-cask
   fi
