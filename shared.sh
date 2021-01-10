@@ -8,6 +8,16 @@ function fancy_echo {
   printf "\n$fmt\n" "$@"
 }
 
+function banner_echo {
+  local fmt="$1"; shift
+  # shellcheck disable=SC2059
+  echo ""
+  echo "--------------------------------------------------------------------------------"
+  printf "$fmt\n" "$@"
+  echo "--------------------------------------------------------------------------------"
+  echo ""
+}
+
 # thoughtbot
 function gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then

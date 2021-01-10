@@ -13,12 +13,12 @@ ensure_homebrew
 declare -a brewfiles=("Brewfile" "Caskfile" "Fontfile")
 
 for f in "${brewfiles[@]}"; do
-  brewfile="$HOME/.${f}"
+  brewfile="$HOME/.dotfiles/${f}"
   if [ -e $brewfile ]; then
-    echo "Bundling $brewfile ..."
+    fancy_echo "Bundling $brewfile ..."
     brew bundle --file=$brewfile
   else
-    echo "${brewfile} does not exist"
+    fancy_echo "${brewfile} does not exist"
   fi
 done
 
